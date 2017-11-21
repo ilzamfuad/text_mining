@@ -4,9 +4,9 @@ import sys
 
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
-judul = "BAKSO ADALAH"
-url = "http://juragancipir.com/bakso-adalah/"
-filename = "bakso.txt"
+judul = "Lumpia Semarang Jajanan Khas dari Semarang, Jawa tengah"
+url = "http://www.negerikuindonesia.com/2015/05/lumpia-semarang-jajanan-khas-dari.html"
+filename = "lumpia.txt"
 
 count = dict()
 
@@ -14,7 +14,7 @@ f = open(filename,"r",encoding='utf-8')
 read = f.read()
 f2 = open("stopword.txt","r")
 stop = f2.read()
-f3 = open("coba2_hasil.txt","w")
+# f3 = open("coba2_hasil.txt","w")
 coba = read.split()
 coba2 = stop.split()
 judul_split = judul.split()
@@ -22,7 +22,7 @@ judul_split = judul.split()
 for i in judul_split:
     coba.append(i)
 
-for ch in ['”','–','“']:
+for ch in ['”','–','“',"'"]:
     read = read.replace(ch," ")
 
 low = [x.lower() for x in coba]
